@@ -3,7 +3,7 @@ const client = new Discord.Client(
     { intents: ["GUILDS", "GUILD_MEMBERS", "GUILD_BANS", "GUILD_MESSAGES", "GUILD_MESSAGE_REACTIONS"], partials: ["MESSAGE", "CHANNEL", "REACTION"] }
 )
 
-client.login("OTI5MzQ5MDkzNzAzMTg0Mzg0.YdmByg.aKvtTY6UNh1xGZNLfN7QcGpkpYQ")
+client.login(process.env.token)
 
 //Prima di tutto mandare il messaggio del ticket
 client.on("messageCreate", message => {
