@@ -10,5 +10,7 @@
   "dependencies": {
     "discord.js": "^13.5.1"
   },
-  "description": ""
+  "engines": {
+    "node" : "16.10.x"
+  }
 }
