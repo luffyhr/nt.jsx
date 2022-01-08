@@ -3,7 +3,13 @@ const client = new Discord.Client(
     { intents: ["GUILDS", "GUILD_MEMBERS", "GUILD_BANS", "GUILD_MESSAGES", "GUILD_MESSAGE_REACTIONS"], partials: ["MESSAGE", "CHANNEL", "REACTION"] }
 )
 
-client.login(process.env.token)
+client.login("OTI5MzQ5MDkzNzAzMTg0Mzg0.YdmByg.DqCfTR0O7NYL1iRjwfrSwQPM2q8")
+
+require('events').EventEmitter.prototype._maxListeners = 100;
+
+client.on("ready", () => {
+    console.log("nt.jsx");
+})
 
 //Prima di tutto mandare il messaggio del ticket
 client.on("messageCreate", message => {
@@ -119,10 +125,6 @@ client.on("messageCreate", message => {
     }
 })
 
-client.on("ready", () => {
-    console.log("ONLINE");
-})
-
 
 //---- 1° METODO ----
 client.on("message", message => {
@@ -176,16 +178,45 @@ client.on("messageReactionRemove", async function (messageReaction, user) {
 
 //WELCOME
 client.on("guildMemberAdd", member => {
-    let channel = member.guild.channels.cache.get("929349282648182876");
+    let channel = member.guild.channels.cache.get("871797484547084399");
     let memberavatar = member.user.avatarURL
         if (!channel) return;
         var embed = new Discord.MessageEmbed()
-        .setColor('#423189')
+        .setColor('#ff0000')
         .setThumbnail(memberavatar)
-        .addField('Ciao!', ${member})
-        .addField('🎮 | Sei il/la ', ${member.guild.memberCount}° gamer di questa casa! Leggi il regolamento e buon divertimento)
-        .setFooter(${member.guild.name})
-        .setImage("https://cdn.discordapp.com/attachments/908781666607190047/923311551090421830/image_5.png")
+        .addField('Benvenuto nella C.R.I.', `${member}`,)
+        .setFooter(`${member.guild.name}`)
+        .setImage("https://media.discordapp.net/attachments/907905606550159410/929427693194313769/CRI-bandi1.gif")
         channel.send({ embeds: [embed] })
-  });
 
+}   )
+
+//WELCOME
+client.on("guildMemberAdd", member => {
+    let channel = member.guild.channels.cache.get("900340413179789342");
+    let memberavatar = member.user.avatarURL
+        if (!channel) return;
+        var embed = new Discord.MessageEmbed()
+        .setColor('#020506')
+        .setThumbnail(memberavatar)
+        .addField('Benvenuto in CHILL COMMUNITY', `${member}`,)
+        .setFooter(`${member.guild.name}`)
+        .setImage("https://cdn.discordapp.com/attachments/879875351461920778/928731568355303494/a_14cd357c3a994a31b097935756ff823c.gif")
+        channel.send({ embeds: [embed] })
+
+}   )
+
+//WELCOME
+client.on("guildMemberAdd", member => {
+    let channel = member.guild.channels.cache.get("740161466971324499");
+    let memberavatar = member.user.avatarURL
+        if (!channel) return;
+        var embed = new Discord.MessageEmbed()
+        .setColor('#020506')
+        .setThumbnail(memberavatar)
+        .addField('Benvenuto in Xenattv', `${member}`,)
+        .setFooter(`${member.guild.name}`)
+        .setImage("https://cdn.discordapp.com/attachments/879875351461920778/916936179629322280/a_34bb1de3433a0a6fdbe920cd8c4f5dae.gif")
+        channel.send({ embeds: [embed] })
+
+    }   )
