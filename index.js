@@ -174,3 +174,18 @@ client.on("messageReactionRemove", async function (messageReaction, user) {
     }
 })
 
+//WELCOME
+client.on("guildMemberAdd", member => {
+    let channel = member.guild.channels.cache.get("929349282648182876");
+    let memberavatar = member.user.avatarURL
+        if (!channel) return;
+        var embed = new Discord.MessageEmbed()
+        .setColor('#423189')
+        .setThumbnail(memberavatar)
+        .addField('Ciao!', ${member})
+        .addField('🎮 | Sei il/la ', ${member.guild.memberCount}° gamer di questa casa! Leggi il regolamento e buon divertimento)
+        .setFooter(${member.guild.name})
+        .setImage("https://cdn.discordapp.com/attachments/908781666607190047/923311551090421830/image_5.png")
+        channel.send({ embeds: [embed] })
+  });
+
